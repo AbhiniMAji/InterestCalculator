@@ -1,6 +1,7 @@
-
+/* Java program to display the Interest Rate and Period of Repayment*/
 import java.util.Scanner;
 
+// Creating an Interface Bank
 public interface Bank {
 
     void personalLoan(double loan);
@@ -10,10 +11,11 @@ public interface Bank {
 
 }
 
+// Creating class SBI which implements Bank
 class SBI implements Bank{
 
     @Override
-     public void personalLoan(double loan){
+     public void personalLoan(double loan){          //Method to display Interest Rate and Period of Repayment for personal loan
 
        if (loan<10000)
            System.out.println(" Interest Rate : 5% \n Period of Repayment : 1 year");
@@ -29,7 +31,7 @@ class SBI implements Bank{
     }
 
     @Override
-    public void educationLoan(double loan) {
+    public void educationLoan(double loan) {            //Method to display Interest Rate and Period of Repayment for educational loan
 
         if (loan<10000)
             System.out.println(" Interest Rate : 2% \n Period of Repayment : 1 year");
@@ -45,7 +47,7 @@ class SBI implements Bank{
     }
 
     @Override
-    public void houseLoan(double loan) {
+    public void houseLoan(double loan) {                 //Method to display Interest Rate and Period of Repayment for house loan
 
         if (loan<10000)
             System.out.println(" Interest Rate : 7% \n Period of Repayment : 1 year");
@@ -60,7 +62,7 @@ class SBI implements Bank{
     }
 
     @Override
-    public void goldLoan(double gram) {
+    public void goldLoan(double gram) {                   //Method to display Interest Rate and Period of Repayment for gold loan
 
         if (gram<100)
             System.out.println(" Interest Rate : 5% \n Period of Repayment : 1 year");
@@ -75,10 +77,11 @@ class SBI implements Bank{
     }
 }
 
+//Creating a class HDFC which implements Bank
 class HDFC implements Bank{
 
     @Override
-    public void personalLoan(double loan){
+    public void personalLoan(double loan){              //Method to display Interest Rate and Period of Repayment for personal loan
 
         if (loan<10000)
             System.out.println(" Interest Rate : 5% \n Period of Repayment : 1 year");
@@ -94,7 +97,7 @@ class HDFC implements Bank{
     }
 
     @Override
-    public void educationLoan(double loan) {
+    public void educationLoan(double loan) {                //Method to display Interest Rate and Period of Repayment for educational loan
 
         if (loan<10000)
             System.out.println(" Interest Rate : 2% \n Period of Repayment : 1 year");
@@ -110,7 +113,7 @@ class HDFC implements Bank{
     }
 
     @Override
-    public void houseLoan(double loan) {
+    public void houseLoan(double loan) {               //Method to display Interest Rate and Period of Repayment for house loan
 
         if (loan<10000)
             System.out.println(" Interest Rate : 8% \n Period of Repayment : 1 year");
@@ -125,7 +128,7 @@ class HDFC implements Bank{
     }
 
     @Override
-    public void goldLoan(double gram) {
+    public void goldLoan(double gram) {            //Method to display Interest Rate and Period of Repayment for gold loan
 
         if (gram<100)
             System.out.println(" Interest Rate : 5% \n Period of Repayment : 1 year");
@@ -152,12 +155,12 @@ class InterestCalculator{
 
         Scanner in=new Scanner(System.in);
         System.out.print("\n Select your bank (SBI / HDFC)  : ");
-        bank=in.nextLine();
+        bank=in.nextLine();      // Reaading name of bank
 
         if (bank.equals("SBI"))
-            b =new SBI();
+            b =new SBI();           // Creating instance of SBI class
         else if(bank.equals("HDFC"))
-            b =new HDFC();
+            b =new HDFC();         // Creating Instance of HDFC class
         else
             System.out.println("NOT an appropriate bank ");
 
@@ -167,7 +170,7 @@ class InterestCalculator{
                 2. Educational Loan\s
                 3. House Loan
                 4. Gold Loan""".indent(1));
-        typeloan= in.nextInt();
+        typeloan= in.nextInt();    // Reading type of loan
         switch (typeloan) {
             case 1 -> {
                 System.out.println("Enter the amount needed : ");
